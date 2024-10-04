@@ -1,0 +1,12 @@
+<% if (current_user.following? user) && (user.following? current_user ) %>
+  <% if @isRoom == true %>
+    <p><a href="/rooms/<%= @roomId %>">チャットへ</a></p>
+  <% else %>
+    <%= form_for @room do |f| %>
+        <%= fields_for @entry do |e|%>
+            <% e.hidden_field :user_id, value: @user.id %>
+        <% end %>
+    <%= f.submit "DMを開始する"%>
+    <% end %>
+  <% end %>
+<% end %>
