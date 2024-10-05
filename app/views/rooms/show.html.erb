@@ -7,13 +7,11 @@
 <%= link_to "ユーザー一覧に戻る", users_path %>
 
 
-    <div class="messages">
+    <div id="messages">
       <% if @messages.present? %>
-        <div id="messages">
-          <% @messages.each do |m| %>
-            <%= render "rooms/message", message: m %>
-          <% end %>
-        </div>
+        <% @messages.each do |m| %>
+          <%= render "rooms/message", message: m %>
+        <% end %>
       <% end %>
     </div>
 
