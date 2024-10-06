@@ -10,7 +10,7 @@
     <div id="messages">
       <% if @messages.present? %>
         <% @messages.each do |m| %>
-          <%= render "rooms/message", message: m %>
+          <%= render "rooms/message", hoge: m %>
         <% end %>
       <% end %>
     </div>
